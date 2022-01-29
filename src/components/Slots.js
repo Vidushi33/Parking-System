@@ -20,7 +20,7 @@ function Slots() {
       arr.push(i);
     }
     setData(arr);
-    const response=await axios.get('http://localhost:4000')
+    const response=await axios.get('https://parking-system-b.herokuapp.com/')
     console.log(response.data.bookedSlots);
     for(let i=0;i<response.data.bookedSlots.length;i++){
       document.getElementById(response.data.bookedSlots[i]).style.background="red";
@@ -77,7 +77,7 @@ function Slots() {
   }
 
  async function getParker(id){
-    const res=await axios.post("http://localhost:4000/slot",{id:id})
+    const res=await axios.post("https://parking-system-b.herokuapp.com/slot",{id:id})
     setModalShow(true)
     setParkerData(res.data.parkerDetails[0])
     console.log("SeetParkers",parkerData)

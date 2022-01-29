@@ -26,7 +26,7 @@ function Exit(){
             return;
         }
 
-        const result = await axios.post("http://localhost:4000/payOnline",{charge:charge});
+        const result = await axios.post("https://parking-system-b.herokuapp.com/payOnline",{charge:charge});
 
         if (!result) {
             alert("Server error. Are you online?");
@@ -50,7 +50,7 @@ function Exit(){
                     razorpaySignature: response.razorpay_signature,
                 };
 
-                const result = await axios.post("http://localhost:4000/payOnline", data);
+                const result = await axios.post("https://parking-system-b.herokuapp.com/payOnline", data);
 
                 console.log(result.data);
             },
@@ -75,7 +75,7 @@ function Exit(){
             buttons:"Submit!"
         }).then(async(value)=>{
             // console.log(value)
-            const response=await axios.post('http://localhost:4000/exit',{vehicleNo:value})
+            const response=await axios.post('https://parking-system-b.herokuapp.com/exit',{vehicleNo:value})
             // console.log(response)
             if(response.data.notFound==true){
                 swal({

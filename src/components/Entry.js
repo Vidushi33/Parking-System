@@ -14,14 +14,14 @@ function Entry(){
   const {register,handleSubmit,reset}=useForm();
   const onSubmit = async(data) => {
     console.log(data);
-    const response =await axios.post("http://localhost:4000/entry",data)
+    const response =await axios.post("https://parking-system-b.herokuapp.com/entry",data)
     swal({
       title: `Slot Alloted: ${response.data.slot}`,
       text: `Entry Time:  ${response.data.entry}`,
       icon: "success",
       button: "Aww yiss!",
     }).then(async()=>{
-      const res=await axios.get('http://localhost:4000')
+      const res=await axios.get('https://parking-system-b.herokuapp.com/')
       console.log(res.data.availSlots);
       for(let i=0;i<res.data.bookedSlots.length;i++){
         document.getElementById(res.data.bookedSlots[i]).style.background="red";
