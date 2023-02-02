@@ -36,7 +36,7 @@ function Exit(){
         const { amount, id: order_id, currency } = result.data;
 
         const options = {
-            key: "rzp_test_FBY4VIR1SRTdOR", // Enter the Key ID generated from the Dashboard
+            key: "rzp_test_JF4EHyySbP0kRv", // Enter the Key ID generated from the Dashboard
             amount: amount.toString(),
             currency: currency,
             name: "Vidushi Malik",
