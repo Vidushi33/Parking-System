@@ -27,6 +27,7 @@ function Exit(){
         }
 
         const result = await axios.post("https://parking-backend.onrender.com/payOnline",{charge:charge});
+        // console.log(result)
 
         if (!result) {
             alert("Server error. Are you online?");
@@ -34,6 +35,7 @@ function Exit(){
         }
 
         const { amount, id: order_id, currency } = result.data;
+        
 
         const options = {
             key: "rzp_test_JF4EHyySbP0kRv", // Enter the Key ID generated from the Dashboard
@@ -41,7 +43,7 @@ function Exit(){
             currency: currency,
             name: "Vidushi Malik",
             description: "Parking Fees",
-            order_id: order_id,
+            // order_id: order_id,
             handler: async function (response) {
                 const data = {
                     orderCreationId: order_id,
