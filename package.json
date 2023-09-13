@@ -13,6 +13,7 @@
     "react-bootstrap": "^2.1.1",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.25.3",
+    "react-razorpay": "^1.2.0",
     "react-scripts": "5.0.0",
     "sweetalert": "^2.1.2",
     "web-vitals": "^2.1.4"

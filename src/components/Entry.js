@@ -22,7 +22,8 @@ function Entry(){
       button: "Aww yiss!",
     }).then(async()=>{
       const res=await axios.get('https://parking-backend.onrender.com/')
-      console.log(res.data.availSlots);
+      console.log(res)
+      console.log(res.data.bookedSlots);
       for(let i=0;i<res.data.bookedSlots.length;i++){
         document.getElementById(res.data.bookedSlots[i]).style.background="red";
       }
